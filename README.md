@@ -36,7 +36,7 @@ echo 'exec zsh' >> ~/.bashrc
 source ~/.bashrc
 
 # pyenv
-
+curl https://pyenv.run | bash
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
@@ -71,7 +71,7 @@ vim .
 :PlugInstall
 
 
-# youcompleteme install
+# YouCompleteMe deps install
 python ~/.vim/plugged/YouCompleteMe/install.py --clang-completer
 
 
