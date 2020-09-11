@@ -38,6 +38,7 @@ git clone git@github.com:rafaelcassau/.dotfiles.git ~/.dotfiles
 
 # configurations
 
+mkdir -p ~/.vim/undodir
 cp ~/.dotfiles/.vimrc ~/
 cp ~/.dotfiles/.tmux.conf ~/
 
