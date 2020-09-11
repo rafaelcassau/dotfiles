@@ -1,13 +1,12 @@
 # dotfiles
 
-My dotfiles
+My dotfiles (Fedora 32)
 
 ```shell
 # required libraries
 
 sudo yum install gvim
 sudo yum install tmux
-sudo yum install git exuberant-ctags ncurses-term curl
 
 
 # zsh/ohmyzsh
