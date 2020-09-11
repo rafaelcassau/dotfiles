@@ -30,8 +30,9 @@ sudo yum install tmux
 
 sudo yum install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo 'export SHELL=$(which zsh)' >> ~/.bashrc
 echo 'source ~/.bash_aliases' >> ~/.bashrc
+echo 'export SHELL=$(which zsh)' >> ~/.bashrc
+echo 'exec zsh' >> ~/.bashrc
 source ~/.bashrc
 
 # pyenv
@@ -43,6 +44,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 exec $SHELL
 pyenv update
 pyenv install 3.8.5
+pyenv global 3.8.5
 
 
 # vim-plug download
@@ -67,6 +69,10 @@ cp ~/.dotfiles/.tmux.conf ~/
 
 vim .
 :PlugInstall
+
+
+# youcompleteme install
+python ~/.vim/plugged/YouCompleteMe/install.py --clang-completer
 
 
 # .vimrc references
