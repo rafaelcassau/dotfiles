@@ -23,6 +23,10 @@ sudo yum install libffi-devel \
 
 sudo dnf install cmake
 
+sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install universal-ctags
+
 sudo yum install vim gvim
 sudo yum install tmux
 
