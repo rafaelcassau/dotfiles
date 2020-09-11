@@ -5,7 +5,7 @@ My dotfiles (Fedora 32)
 ```shell
 # required libraries
 
-sudo yum install gvim
+sudo yum install vim gvim
 sudo yum install tmux
 
 
