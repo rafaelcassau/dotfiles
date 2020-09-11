@@ -21,6 +21,7 @@ sudo yum install libffi-devel \
     libyaml-devel \
     redhat-rpm-config
 
+sudo dnf install cmake
 
 sudo yum install vim gvim
 sudo yum install tmux
