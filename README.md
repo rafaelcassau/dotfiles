@@ -1,6 +1,6 @@
-# dotfiles
+# .dotfiles
 
-My dotfiles (Fedora 32)
+My dotfiles RHEL family
 
 ```shell
 # required libraries
