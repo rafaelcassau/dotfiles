@@ -5,6 +5,23 @@ My dotfiles RHEL family
 ```shell
 # required libraries
 
+sudo yum groupinstall "Development Tools"
+
+sudo yum install libffi-devel \
+    zlib-devel \
+    bzip2-devel \
+    readline-devel \
+    sqlite-devel \
+    wget \
+    curl \
+    llvm \
+    ncurses-devel \
+    openssl-devel \
+    lzma-sdk-devel \
+    libyaml-devel \
+    redhat-rpm-config
+
+
 sudo yum install vim gvim
 sudo yum install tmux
 
@@ -13,19 +30,19 @@ sudo yum install tmux
 
 sudo yum install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo 'exec zsh' >> ~/.bashrc
+echo 'export SHELL=$(which zsh)' >> ~/.bashrc
+echo 'source ~/.bash_aliases' >> ~/.bashrc
 source ~/.bashrc
 
 # pyenv
 
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
-
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
-source ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+exec $SHELL
+pyenv update
+pyenv install 3.8.5
 
 
 # vim-plug download
