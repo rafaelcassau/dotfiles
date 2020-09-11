@@ -24,13 +24,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # my dot files
 
-git clone git@github.com:rafaelcassau/dotfiles.git ~/dotfiles
+git clone git@github.com:rafaelcassau/.dotfiles.git ~/dotfiles
 
 
 # configurations
 
-cp ~/dotfiles/.vimrc ~/
-cp ~/dotfiles/.tmux.conf ~/
+cp ~/.dotfiles/.vimrc ~/
+cp ~/.dotfiles/.tmux.conf ~/
 
 
 # vim plugin install
