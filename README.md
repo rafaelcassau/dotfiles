@@ -42,8 +42,11 @@ echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 exec $SHELL
+
 pyenv update
+
 pyenv install 3.8.5
+
 pyenv global 3.8.5
 
 
