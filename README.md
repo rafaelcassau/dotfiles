@@ -19,7 +19,9 @@ sudo yum install libffi-devel \
     openssl-devel \
     lzma-sdk-devel \
     libyaml-devel \
-    redhat-rpm-config
+    redhat-rpm-config \
+    xvim \
+    vim-enhanced
 
 sudo dnf install cmake
 
@@ -31,22 +33,39 @@ sudo yum install vim gvim
 sudo yum install tmux
 
 
+# bash_aliases
+
+echo 'alias vi='vimx'' >> ~/.bash_aliases
+echo 'alias vim='vimx'' >> ~/.bash_aliases
+
+source ~/.bash_aliases
+
+
+# check if vim alias works properly to "xvim"
+# should print "+clipboard" indicating "xvim" was called with success
+# it's indicate that it's possible using copy/paste from clipboard
+
+vim --version | grep clipboard
+
+
 # zsh/ohmyzsh
 
 sudo yum install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo 'exec zsh' >> ~/.bashrc
 source ~/.bashrc
+echo 'source ~/.bash_aliases' >> ~/.zshrc
+source ~/.zshrc
+
 
 # pyenv
+
 curl https://pyenv.run | bash
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
-echo 'source ~/.bash_aliases' >> ~/.zshrc
 exec $SHELL
-source ~/.zshrc
 
 pyenv update
 
