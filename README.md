@@ -63,22 +63,20 @@ cat <<EOT >> ~/.zshrc
 # load aliases
 source ~/.bash_aliases
 
-
-# FZF shell
-
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-source ~/.zshrc
-
-
 # FZF color theme
-
 export FZF_DEFAULT_OPTS='
   --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
   --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
 '
 EOT
+
+source ~/.zshrc
+
+
+# FZF shell
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 source ~/.zshrc
 
@@ -97,6 +95,7 @@ eval "$(pyenv virtualenv-init -)"
 EOT
 
 exec $SHELL
+source ~/.zshrc
 
 pyenv update
 
@@ -156,4 +155,3 @@ https://youtu.be/n9k9scbTuvQ
 https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R
 
 https://blog.juliobiason.me/books/uma-licao-de-vim/
-
