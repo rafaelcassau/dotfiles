@@ -23,7 +23,9 @@ sudo yum install libffi-devel \
     xvim \
     vim-enhanced
 
-sudo dnf install cmake
+sudo dnf install \ 
+    cmake
+    bat
 
 sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
