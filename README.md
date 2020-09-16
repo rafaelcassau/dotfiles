@@ -93,3 +93,16 @@ https://youtu.be/n9k9scbTuvQ
 https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R
 
 https://blog.juliobiason.me/books/uma-licao-de-vim/
+
+
+# git ignore custom files locally
+
+echo 'Pipfile' >> ~/projects/redhat/<project-name>/.git/info/exclude
+echo 'Pipfile.lock' >> ~/projects/redhat/<project-name>/.git/info/exclude
+
+
+# git ignore custom files globally
+
+echo 'Pipfile' >> ~/.gitignore_global
+echo 'Pipfile.lock' >> ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
