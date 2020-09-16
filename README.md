@@ -56,17 +56,35 @@ sudo yum install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo 'exec zsh' >> ~/.bashrc
 source ~/.bashrc
-echo 'source ~/.bash_aliases' >> ~/.zshrc
+
+cat <<EOT >> ~/.zshrc
+# load aliases
+source ~/.bash_aliases
+
+# FZF color theme
+
+export FZF_DEFAULT_OPTS='
+  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
+'
+EOT
+
 source ~/.zshrc
 
 
 # pyenv
 
 curl https://pyenv.run | bash
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
-echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+cat <<\EOT >> ~/.zshrc
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+EOT
+
 exec $SHELL
 
 pyenv update
@@ -104,18 +122,6 @@ vim .
 python ~/.vim/plugged/YouCompleteMe/install.py --clang-completer
 
 
-# .vimrc references
-
-https://youtu.be/n9k9scbTuvQ
-
-
-# vim for beginners
-
-https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R
-
-https://blog.juliobiason.me/books/uma-licao-de-vim/
-
-
 # git ignore custom files locally
 
 echo 'Pipfile' >> ~/projects/redhat/<project-name>/.git/info/exclude
@@ -127,3 +133,16 @@ echo 'Pipfile.lock' >> ~/projects/redhat/<project-name>/.git/info/exclude
 echo 'Pipfile' >> ~/.gitignore_global
 echo 'Pipfile.lock' >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
+
+
+# .vimrc references
+
+https://youtu.be/n9k9scbTuvQ
+
+
+# vim for beginners
+
+https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R
+
+https://blog.juliobiason.me/books/uma-licao-de-vim/
+
