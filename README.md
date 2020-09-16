@@ -19,9 +19,7 @@ sudo yum install libffi-devel \
     openssl-devel \
     lzma-sdk-devel \
     libyaml-devel \
-    redhat-rpm-config \
-    xvim \
-    vim-enhanced
+    redhat-rpm-config 
 
 sudo dnf install \ 
     cmake
@@ -31,8 +29,12 @@ sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install universal-ctags
 
-sudo yum install vim gvim
-sudo yum install tmux
+sudo yum install vim \
+    gvim \
+    vim-X11 \
+    vim-enhanced \
+    tmux \
+    tmate
 
 
 # bash_aliases
@@ -60,6 +62,15 @@ source ~/.bashrc
 cat <<EOT >> ~/.zshrc
 # load aliases
 source ~/.bash_aliases
+
+
+# FZF shell
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+source ~/.zshrc
+
 
 # FZF color theme
 
