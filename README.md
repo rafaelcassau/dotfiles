@@ -35,8 +35,6 @@ sudo yum install tmux
 
 sudo yum install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo 'source ~/.bash_aliases' >> ~/.bashrc
-echo 'export SHELL=$(which zsh)' >> ~/.bashrc
 echo 'exec zsh' >> ~/.bashrc
 source ~/.bashrc
 
@@ -46,7 +44,9 @@ echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'export PYTHON_CONFIGURE_OPTS="--enable-shared"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+echo 'source ~/.bash_aliases' >> ~/.zshrc
 exec $SHELL
+source ~/.zshrc
 
 pyenv update
 
