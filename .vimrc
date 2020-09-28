@@ -66,6 +66,7 @@ map <C-t> :NERDTreeToggle<CR>
 
 " fzf
 map <C-p> <Esc><Esc>:Files!<CR>
+map <C-i> <Esc><Esc>:Rg!<CR>
 map <C-g> <Esc><Esc>:BCommits!<CR>
 map <C-b> <Esc><Esc>:Buffers<CR>
 inoremap <C-p> <Esc><Esc>:BLines<CR>
