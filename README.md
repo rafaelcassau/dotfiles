@@ -19,7 +19,8 @@ sudo yum install libffi-devel \
     openssl-devel \
     lzma-sdk-devel \
     libyaml-devel \
-    redhat-rpm-config 
+    redhat-rpm-config \
+    ripgrep
 
 sudo dnf install \ 
     cmake
