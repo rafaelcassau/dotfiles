@@ -21,3 +21,4 @@ EOF
 ```
 source ~/.bashrc
 ```
+# After that you can run fish_config to set via localhost the settings you preferred.
