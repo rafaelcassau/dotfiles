@@ -109,16 +109,6 @@ Log out and back in for this to take effect.
 
 ---
 
-## 📚 Philosophy
-
-Simple, minimal, and practical:
-
-* No heavy frameworks
-* Fast setup
-* Easy to understand and modify
-
----
-
 ## ⚠️ Disclaimer
 
 These are personal configurations.
